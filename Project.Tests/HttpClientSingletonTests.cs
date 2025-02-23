@@ -9,6 +9,13 @@ public class HttpClientSingletonTests
         var response = await HttpClientSingleton.Instance.GetAsync("");
         Assert.True(response.IsSuccessStatusCode);
     }
-    [Theory]
-    public async Task
+    [Fact]
+    public async Task HttpClientSingleton_GetValidUserEvents_HasValidStatusCode()
+    {
+
+        string username = "comacrae";
+        var response = await HttpClientSingleton.Instance.GetAsync($"{}");
+        Assert.True(response.IsSuccessStatusCode);
+
+    }
 }

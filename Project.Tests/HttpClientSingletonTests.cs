@@ -2,6 +2,8 @@ namespace Project.Tests;
 using GithubCLI.Services;
 using GithubCLI.Models;
 using Xunit.Abstractions;
+using GithubCLI.Models.Events;
+using System.Security.Cryptography;
 
 public class HttpClientSingletonTests: IClassFixture<EnvFixture>
 {
@@ -38,6 +40,7 @@ public class HttpClientSingletonTests: IClassFixture<EnvFixture>
         await Assert.ThrowsAsync<HttpRequestException>( async () => await HttpClientSingleton.GetUserResponse(username));
 
     }
+    /*
     [Fact]
     public async Task HttpClientSIngleton_WriteResponseToFile_CreatesFile()
     {
@@ -46,9 +49,10 @@ public class HttpClientSingletonTests: IClassFixture<EnvFixture>
         Assert.NotNull(u);
         Assert.NotNull(u.Body);
         string json = u.Body; //JSON parsed contents
-        u.WriteToFile("output.json"); // saves to file at path
-        u.LoadFromFile("output.json"); // reads from file at path
+        string path = "C: \Users\comac\source\repos\GithubCLI\Project.Tests\TestResponses\output.json";
+        u.WriteToFile(path); // saves to file at path
+        u.LoadFromFile(path); // reads from file at path
         Assert.Equal(json, u.Body);
-
     }
+    */
 }

@@ -11,7 +11,7 @@ namespace Project.Tests
     {
         public List<GithubEventBase> events {  get; private set; }
         public GithubEventFixture() {
-            events = new List<GithubEvent>();
+            events = new List<GithubEventBase>();
         }
     }
     public class GithubEventTests: IClassFixture<GithubEventFixture>

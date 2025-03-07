@@ -1,0 +1,20 @@
+using GithubCLI.Models.Events;
+using System;
+using System.IO;
+using System.Text.Json;
+namespace Project.Tests
+{
+    public class PushEventTests
+
+    {
+        [Fact]
+        public void PushEvent_Deserialize_Success()
+        {
+
+
+            var result  = JsonSerializer.Deserialize<List<PushEvent>>(File.ReadAllText())
+
+        }
+
+    }
+}
